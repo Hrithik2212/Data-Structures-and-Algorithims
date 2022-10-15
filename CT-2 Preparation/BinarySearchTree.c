@@ -31,6 +31,17 @@ struct Node* insert(struct Node* node , int item){
   return node;
 }
 
+// Searchiing in Binary search Tree
+
+struct Node* search(struct Node* root,int item){
+    if(root==NULL || root->data == item)
+        return root;
+    if (root->data < item )
+        return search(root->right,item);
+    else 
+        return search(root->left,item);
+}
+
 int main() {
   struct Node *root = NULL;
   root = insert(root, 8);
